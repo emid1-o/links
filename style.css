@@ -1,0 +1,135 @@
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100dvh;
+}
+
+body {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    url('mazzy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+}
+
+
+.musica  {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 20px;
+    align-items: center;
+    justify-content: space-around;
+    outline: 2px solid black;
+    width: fit-content;
+    border-radius: 10px;
+    height: 80px;
+    gap: 7px;
+}
+
+#albumImg {
+    outline: 1px solid black;
+    border-radius: 5px;
+    margin-right: 4px;
+    width: 64px;
+    height: 64px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-repeat: no-repeat;
+}
+
+.musica span {
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+.link-box {
+  width: 200px;
+  height: 60px;
+  background: transparent;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  text-decoration: none;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(-200px);
+  animation: fall 1s forwards;
+}
+
+.link-box:nth-child(1) { animation-delay: 0.2s; }
+.link-box:nth-child(2) { animation-delay: 0.4s; }
+.link-box:nth-child(3) { animation-delay: 0.6s; }
+.link-box:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fall {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.link-box:hover {
+    outline: 2px black solid;
+}
+
+@media (max-width: 992px) {
+  body {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+      url('outra-imagem.jpg');
+  }
+}
+
+
+@media (max-width: 576px) {
+  body {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+      url('Screenshot From 2025-10-30 13-23-04.png');
+  }
+}
+
+
+.links {
+    font-size: 30px;
+}
+
+#linkedinImg {
+    width: 58px;
+    height: 58px;
+}
+
+#last {
+    width: 53px;
+    height: 53px;
+}
+
+.linkImages {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+

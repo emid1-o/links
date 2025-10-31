@@ -25,6 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (musicaDiv) {
             musicaDiv.style.opacity = '1';
         }
+        const namespace = "emidioVisitas";
+    const name = "visitas";
+
+    const registrarVisita = async () => {
+    
+      try {
+        
+        const res = await fetch(`https://api.counterapi.dev/v1/${namespace}/${name}/up`);
+        const data = await res.json();
+
+        
+        console.log(`Total de visitas: ${data.count}`);
+      } catch (err) {
+        console.error("Erro ao registrar visita:", err);
+      }
+    };
+
+    registrarVisita();
+  
     }, delayEmMs);
 
 });
@@ -46,23 +65,6 @@ fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${use
 
 
 
-  const namespace = "emidioVisitas";
-    const name = "visitas";
-
-    const registrarVisita = async () => {
-      try {
-        
-        const res = await fetch(`https://api.counterapi.dev/v1/${namespace}/${name}/up`);
-        const data = await res.json();
-
-        
-        console.log(`Total de visitas: ${data.value}`);
-      } catch (err) {
-        console.error("Erro ao registrar visita:", err);
-      }
-    };
-
-    registrarVisita();
-  
+    
 
   

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
     margin: 0;
     padding: 0;
@@ -21,6 +23,7 @@ body {
   padding: 0;
 }
 
+
 .container {
   display: flex;
   flex-direction: column;
@@ -29,19 +32,32 @@ body {
   align-items: center;
 }
 
+.container h1 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: "Jost", sans-serif;
+    margin-bottom: 80px;
+}
+
+.container h1:hover {
+    outline: 2px rgba(177, 32, 32, 0) solid;
+}
+
 
 .musica  {
     display: flex;
     flex-direction: row;
     position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
     top: 20px;
     align-items: center;
     justify-content: space-around;
-    outline: 2px solid black;
     width: fit-content;
     border-radius: 10px;
     height: 80px;
-    gap: 7px;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 #albumImg {
@@ -57,10 +73,12 @@ body {
 
 .musica span {
     margin-left: 5px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     color: white;
+    font-family: "Jost", sans-serif;
 }
+
 
 .link-box {
   width: 200px;
@@ -70,7 +88,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: sans-serif;
+  font-family: "Jost", sans-serif;
   text-decoration: none;
   border-radius: 10px;
   opacity: 0;
@@ -78,10 +96,11 @@ body {
   animation: fall 1s forwards;
 }
 
-.link-box:nth-child(1) { animation-delay: 0.2s; }
+.link-box:nth-child(1) { animation-delay: 0.2s;}
 .link-box:nth-child(2) { animation-delay: 0.4s; }
 .link-box:nth-child(3) { animation-delay: 0.6s; }
 .link-box:nth-child(4) { animation-delay: 0.8s; }
+.link-box:nth-child(5) { animation-delay: 0.9s; }
 
 @keyframes fall {
   to {
@@ -98,7 +117,7 @@ body {
   body {
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-      url('outra-imagem.jpg');
+      url('mediumm.png');
   }
 }
 
@@ -116,14 +135,18 @@ body {
     font-size: 30px;
 }
 
-#linkedinImg {
-    width: 58px;
-    height: 58px;
+.coiso {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: 10px;
 }
 
 #last {
-    width: 53px;
-    height: 53px;
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+    margin-left: 10px;
 }
 
 .linkImages {

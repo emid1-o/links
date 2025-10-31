@@ -73,6 +73,7 @@ body {
     margin-top: 2px;
     margin-bottom: 2px;
     background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
 .musica span {
@@ -132,6 +133,7 @@ body {
       linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
       url('Screenshot From 2025-10-30 13-23-04.png');
   }
+
 
   .musica {
     width: 90vw;

@@ -97,7 +97,7 @@ body {
 .mail {
   display: flex;
   position: absolute;
-  bottom: 40px;
+  bottom: 10px;
   width: 50vw;
   height: 32vh;
   transform: translateY(30px);
@@ -115,12 +115,12 @@ body {
 .mail textarea {
   background: transparent;
   border-color: black;
-  color: white;            
+  color: white;
 }
 
 .mail ::placeholder {
-  color: white;            
-  opacity: 1;            
+  color: white;
+  opacity: 1;
 }
 
 #contact-form {
@@ -196,6 +196,16 @@ body {
     width: 80vw;
     text-align: center;
     margin-bottom: 60px;
+  }
+
+  .mail {
+    display: flex;
+    position: absolute;
+    bottom: -70px;
+    width: 70vw;
+    height: 32vh;
+    transform: translateY(30px);
+    animation: fadeIn 1.2s ease forwards;
   }
 }
 

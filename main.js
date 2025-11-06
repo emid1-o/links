@@ -38,6 +38,50 @@ fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${use
   })
   .catch(err => console.error(err));
 
+//parte do form
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const form = event.target;
+        const statusMessage = document.getElementById('status-message');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const data = new FormData(form);
+
+        statusMessage.innerText = 'Enviando...';
+        statusMessage.style.color = 'gray';
+        submitButton.disabled = true;
+
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                statusMessage.innerText = 'Mensagem enviada :)';
+                statusMessage.style.color = 'white';
+                form.reset();
+            } else {
+                response.json().then(data => {
+                    
+                    statusMessage.innerText = data.errors ? data.errors.map(error => error.message).join(', ') : 'Erro ao enviar. Tente novamente.';
+                    statusMessage.style.color = 'red';
+                });
+            }
+        }).catch(error => {
+            console.log('FALHA...', error);
+            statusMessage.innerText = 'Erro ao enviar. Tente novamente.';
+            statusMessage.style.color = 'red';
+        }).finally(() => {
+            submitButton.disabled = false;
+        });
+    });
+
+    
+    document.getElementById('contact-form').action = "https://formspree.io/f/xpwovlqy";
+    document.getElementById('contact-form').method = 'POST';
+
 
 
 

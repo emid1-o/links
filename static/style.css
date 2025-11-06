@@ -35,13 +35,6 @@ body {
   margin-bottom: 130px;
 }
 
-.container h1 {
-  width: 30vh;
-  font-size: 42px;
-  font-weight: 500;
-  font-family: "Jost", sans-serif;
-  margin-bottom: 80px;
-}
 
 .container h1:hover {
   outline: 2px rgba(177, 32, 32, 0) solid;
@@ -99,6 +92,39 @@ body {
   opacity: 0;
   transform: translateY(-200px);
   animation: fall 1s forwards;
+}
+
+.mail {
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  width: 50vw;
+  height: 32vh;
+  transform: translateY(30px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mail input,
+.mail textarea {
+  background: transparent;
+  border-color: black;
+  color: white;            
+}
+
+.mail ::placeholder {
+  color: white;            
+  opacity: 1;            
+}
+
+#contact-form {
+  background: transparent;
 }
 
 .link-box:nth-child(1) {
